@@ -22,12 +22,11 @@ router.put('/api/subscriptions/:id', db.updateSubscription);
 router.delete('/api/subscriptions/:id', db.removeSubscription);
 
 router.get('/api/directories', db.getAllDirectories);
-router.get('/api/directories/user/:userId/subscription/:subscriptionId', db.getSingleDirectory);
-router.get('/api/directories/user/:userId', db.getSubscriptionsOfUser);
-router.get('/api/directories/subscription/:subscriptionId', db.getUsersOfSubscription);
+router.get('/api/directories/user/:userID/subscription/:subscriptionID', db.getSingleDirectory);
+router.get('/api/directories/user/:userID', db.getSubscriptionsOfUser);
+router.get('/api/directories/subscription/:subscriptionID', db.getUsersOfSubscription);
 router.post('/api/directories', db.createDirectory);
-router.put('/api/directories/user/:userId/subscription/:subscriptionId', db.updateDirectory);
-router.delete('/api/directories/user/:userId/subscription/:subscriptionId', db.removeDirectory);
+router.delete('/api/directories/user/:userID/subscription/:subscriptionID', db.removeDirectory);
 
 
 module.exports = router;

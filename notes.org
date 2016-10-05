@@ -12,13 +12,13 @@ Users
 |     567 | Test3     |
 
 Subscriptions
-| subscription_id | url                      |
-|-----------------+--------------------------|
-|              12 | http://www.testsite1.com |
-|              23 | http://www.testsite2.com |
-|              34 | http://www.testsite3.com |
+| subscription_id | name      | url                      |
+|-----------------+-----------+--------------------------|
+|              12 | Testsite1 | http://www.testsite1.com |
+|              23 | Testsite2 | http://www.testsite2.com |
+|              34 | Testsite3 | http://www.testsite3.com |
 
-Directory
+Directories
 | user_id | subscription_id |
 |---------+-----------------|
 | 123     | 12              |
@@ -28,23 +28,23 @@ Directory
 | 567     | 34              |
 
 * Sample queries
-INSERT INTO Directory (user_id, subscription_id)
+INSERT INTO Directories (user_id, subscription_id)
 VALUES (123, 12), (123, 34), (345, 23), (567, 12), (567, 34);
 
 /* Query the attributes of all users for a given user ID */
 SELECT u.*
-FROM Users AS u JOIN Directory AS d ON (u.user_id = c.user_id)
-WHERE c.user_id = 123;
+FROM Users AS u JOIN Directories AS d ON (u.user_id = d.user_id)
+WHERE d.user_id = 123;
 
 /* Query the attributes of all subscriptions for a given subscription ID */
 SELECT s.*
-FROM Subscriptions AS s JOIN Directory AS d ON (s.subscription_id = c.subscription_id)
+FROM Subscriptions AS s JOIN Directories AS d ON (s.subscription_id = d.subscription_id)
 WHERE s.subscription_id = 34;
 
 /* Query the subscription URLs for a given user ID */
 SELECT s.url
-FROM Subscriptions AS s JOIN Directory AS d ON (s.subscription_id = c.subscription_id)
-WHERE c.user_id = 123;
+FROM Subscriptions AS s JOIN Directories AS d ON (s.subscription_id = d.subscription_id)
+WHERE d.user_id = 123;
 
 * API
 | URL                                                        | HTTP Verb | Action                                     |
@@ -64,5 +64,4 @@ WHERE c.user_id = 123;
 | /api/directories/user/:userID                              | GET       | Return all subscriptions for a single user |
 | /api/directories/subscription/:subscriptionID              | GET       | Return all users for a single subscription |
 | /api/directories                                           | POST      | Add a user-subscription pair               |
-| /api/directories/user/:userID/subscription/:subscriptionID | PUT       | Update a user-subscription pair            |
 | /api/directories/user/:userID/subscription/:subscriptionID | DELETE    | Delete a user-subscription pair            |

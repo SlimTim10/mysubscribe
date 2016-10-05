@@ -10,10 +10,11 @@ CREATE TABLE users (
 
 CREATE TABLE subscriptions (
 	subscription_id SERIAL PRIMARY KEY,
+	name VARCHAR UNIQUE NOT NULL,
 	url VARCHAR UNIQUE NOT NULL
 );
 
-CREATE TABLE directory (
+CREATE TABLE directories (
 	user_id SERIAL REFERENCES users (user_id),
 	subscription_id SERIAL REFERENCES subscriptions (subscription_id),
 	PRIMARY KEY (user_id, subscription_id)
@@ -22,5 +23,5 @@ CREATE TABLE directory (
 INSERT INTO users (user_id, user_name)
 VALUES (DEFAULT, 'Test');
 
-INSERT INTO subscriptions (subscription_id, url)
-VALUES (DEFAULT, 'http://www.google.ca');
+INSERT INTO subscriptions (subscription_id, name, url)
+VALUES (DEFAULT, 'Google', 'http://www.google.ca');
