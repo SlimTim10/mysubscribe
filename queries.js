@@ -14,7 +14,7 @@ function getAllUsers(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved all users'
         });
     })
@@ -29,7 +29,7 @@ function getSingleUser(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved one user'
         });
     })
@@ -83,7 +83,7 @@ function getAllSubscriptions(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved all subscriptions'
         });
     })
@@ -98,7 +98,7 @@ function getSingleSubscription(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved one subscription'
         });
     })
@@ -152,7 +152,7 @@ function getAllDirectories(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved all directories'
         });
     })
@@ -168,7 +168,7 @@ function getSingleDirectory(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved one subscription'
         });
     })
@@ -185,7 +185,7 @@ function getSubscriptionsOfUser(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved subscriptions'
         });
     })
@@ -202,7 +202,7 @@ function getUsersOfSubscription(req, res, next) {
       res.status(200)
         .json({
           status: 'success',
-          data: data,
+          body: data,
           message: 'Retrieved users'
         });
     })

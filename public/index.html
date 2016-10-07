@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="mySubscribe">
+<head>
+  <title>mySubscribe</title>
+</head>
+<body ng-controller="MainController">
+  <h1 id="title">mySubscribe</h1>
+  <h2>Users</h2>
+  <ul>
+	<li ng-repeat="user in users"><a href="#{{user.user_id}}">{{user.name}}</a></li>
+  </ul>
+  <h2>Subscriptions</h2>
+  <ul>
+	<li ng-repeat="subscription in subscriptions"><a href="{{subscription.url}}">{{subscription.name}}</a></li>
+  </ul>
+  <h2>Directories</h2>
+  <ul>
+	<li ng-repeat="directory in directories">user {{directory.user_id}} -- subscription {{directory.subscription_id}}</li>
+  </ul>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="javascripts/core.js"></script>
+</body>
+</html>
