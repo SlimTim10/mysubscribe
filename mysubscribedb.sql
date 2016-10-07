@@ -5,7 +5,7 @@ CREATE DATABASE mysubscribedb;
 
 CREATE TABLE users (
 	user_id SERIAL PRIMARY KEY,
-	user_name VARCHAR UNIQUE NOT NULL
+	name VARCHAR UNIQUE NOT NULL
 );
 
 CREATE TABLE subscriptions (
@@ -20,7 +20,7 @@ CREATE TABLE directories (
 	PRIMARY KEY (user_id, subscription_id)
 );
 
-INSERT INTO users (user_id, user_name)
+INSERT INTO users (user_id, name)
 VALUES (DEFAULT, 'Test');
 
 INSERT INTO subscriptions (subscription_id, name, url)
