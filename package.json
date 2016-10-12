@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "config": {
-    "port": "5432"
-  },
   "scripts": {
     "start": "node ./bin/www"
   },
