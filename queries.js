@@ -5,7 +5,7 @@ var options = {
 };
 
 var pg = require('pg-promise')(options);
-var connectionString = 'postgres://postgres:admin@localhost:5432/mysubscribedb';
+var connectionString = 'postgres://postgres:admin@localhost:3000/mysubscribedb';
 var db = pg(connectionString);
 
 function getAllUsers(req, res, next) {
