@@ -3,6 +3,13 @@
 - [[http://mherman.org/blog/2015/02/12/postgresql-and-nodejs/][PostgreSQL and NodeJS]]
 - https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular
 - https://github.com/scotch-io/node-todo
+- Auth
+  - https://scotch.io/tutorials/easy-node-authentication-google
+  - http://passportjs.org/docs/google
+  - https://developers.google.com/apis-explorer/?hl=en_GB#p/plus/v1/plus.people.get?userId=me&fields=displayName%252Cemails%252Fvalue%252Cid&_h=6&
+  - http://uitblog.com/postgres-with-passport/
+  - http://stribny.name/blog/2015/09/authentication-quickstart-with-express-passport-and-sequelize
+  - https://www.reddit.com/r/node/comments/45n0vu/using_postgres_with_passport/
 
 * Tables
 Users
